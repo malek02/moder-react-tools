@@ -17,5 +17,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: install
+        run: npm run install
+
       - name: check-lint
         run: npm run lint:fix
