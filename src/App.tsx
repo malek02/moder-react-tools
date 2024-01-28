@@ -9,7 +9,7 @@ function App() {
     
     eventSource.onmessage = (event) => {
       const stockData = JSON.parse(event.data);
-      console.log(stockData)
+      window.console.log(stockData)
     };
    },[])
 
