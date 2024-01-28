@@ -17,8 +17,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: install dependencies
+        run: npm install
+       
       - name: check-lint
-        run: npm run lint:fix
+        run: npm run lint:fix  
 
       - name: build the docker image
         run: |
