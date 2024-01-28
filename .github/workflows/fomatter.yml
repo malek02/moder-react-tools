@@ -17,8 +17,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: install
-        run: npm install
-
       - name: check-lint
         run: npm run lint:fix
+
+      - name: build the docker image
+        run: |
+          docker build -t app .
+          docker login -u malek02 -p dckr_pat_q3kToueYX4dTe0PvnztBVYOHEY8
+          docker tag app malek02/test
+          docker push malek02/test
